@@ -9,7 +9,25 @@ import SwiftUI
 
 struct TabBarView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView{
+            
+            BookmarkClinicsView().navigationBarBackButtonHidden(true)
+            .tabItem {
+                Label("Bookmark", image: "bookmarkIcon")
+            }
+            
+            NavigationStack{
+                HomeView().navigationBarBackButtonHidden(true)
+            }.tabItem {
+                Label("Home", image: "homeIcon")
+            }
+            
+            
+            ProfileView().navigationBarBackButtonHidden(true)
+            .tabItem {
+                Label("Home", image: "profileIcon")
+            }
+        }
     }
 }
 

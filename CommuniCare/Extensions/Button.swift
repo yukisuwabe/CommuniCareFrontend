@@ -21,13 +21,13 @@ struct LargeButtonStyle: ButtonStyle {
             .foregroundColor(currentForegroundColor)
             .background(isDisabled || configuration.isPressed ? backgroundColor.opacity(0.3) : backgroundColor)
             // This is the key part, we are using both an overlay as well as cornerRadius
-            .cornerRadius(12.5)
+            .cornerRadius(20)
             .overlay(
-                RoundedRectangle(cornerRadius: 12.5)
+                RoundedRectangle(cornerRadius: 20)
                     .stroke(currentForegroundColor, lineWidth: 2)
         )
             .padding([.top, .bottom], 10)
-            .font(Font.system(size: 19, weight: .semibold))
+            .font(Font.system(size: 15, weight: .semibold))
     }
 }
 
@@ -72,3 +72,23 @@ struct LargeButton: View {
         .frame(maxWidth:150)
     }
 }
+
+
+// Button(action: {
+//                            // Apply Action
+//                        }) {
+//                            Text("Apply")
+//                                .foregroundColor(.white)
+//                                .padding()
+//                                .cornerRadius(20)
+//                                .overlay(
+//                                    RoundedRectangle(cornerRadius: 20)
+//                                        .frame(width: 100, height: 40)
+//                                        .foregroundStyle(Color.matchaGreen)
+//                                )
+//                                .padding([.top, .bottom], 10)
+//                                .font(Font.system(size: 15, weight: .semibold))
+////                                .background(Color.matchaGreen)
+////                                .cornerRadius(20)
+////                                .frame(width: 100, height: 40)
+//                        }.offset(x: -35)
