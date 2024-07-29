@@ -22,16 +22,21 @@ class LoginViewModel: ObservableObject {
         
     }
     
-    func login () {
+    func login () async {
         guard validate() else {
             return
         }
+        do {
+            let authUser = try await Auth.auth().signIn(withEmail: email, password: password)
+        } catch {
+            print(error)
+        }
         
         // log in
-//        Auth.auth().signIn(withEmail: email, password: password)
-        if email == "april123@gmail.com" && password == "password" {
-            currentUserSignedIn = true
-        }
+        
+//        if email == "april123@gmail.com" && password == "password" {
+//            currentUserSignedIn = true
+//        }
     }
     
     func validate () -> Bool{
